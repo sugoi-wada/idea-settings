@@ -1,0 +1,28 @@
+<templateSet group="Android">
+  <template name="ppb" value="companion object {&#10;  @JvmField val CREATOR = PaperParcel$CLASS$.CREATOR&#10;}&#10;  &#10;override fun describeContents() = 0&#10;&#10;override fun writeToParcel(dest: Parcel, flags: Int) {&#10;  PaperParcel$CLASS$.writeToParcel(this, dest, flags)&#10;}" description="Generates PaperParcel boilerplate" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="kotlinClassName()" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="ext" value="private val EXTRA_$NAME$ = &quot;${$THIS$::class.java.`package`.name}.$NAME$&quot;" description="Define activity/fragment EXTRA constant" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="THIS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="intenter" value="public static void start(android.content.Context context) {&#10;    android.content.Intent starter = new Intent(context, $ACTIVITY$.class);&#10;    starter.putExtra($CURSOR$);&#10;    context.startActivity(starter);&#10;}" description="Creates a static intent(...) helper method to start an Activity" toReformat="false" toShortenFQNames="true">
+    <variable name="ACTIVITY" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CURSOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="intent" value="companion object {&#10;    fun intent(context: Context) = Intent(context, $CLASS$::class.java)&#10;}" description="Creates a companion object intent(...) helper method to start an Activity" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="kotlinClassName()" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>
