@@ -20,7 +20,6 @@
       <mapping pattern="contactEmail" type="PLAIN_TEXT" />
       <mapping pattern="remoteignore" type="PLAIN_TEXT" />
       <mapping pattern="ignore" type="PLAIN_TEXT" />
-      <mapping pattern=".editorconfig" type="PLAIN_TEXT" />
       <mapping pattern="contactWebsite" type="PLAIN_TEXT" />
       <mapping pattern="contactPhone" type="PLAIN_TEXT" />
       <mapping pattern="ic_favorite_vector" type="XML" />
